@@ -29,6 +29,18 @@ export default function AgentChat() {
     const userMessage = input.trim();
     setInput('');
     setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+
+    // Name Capture Logic
+    const nameMatch = userMessage.match(/(?:my name is|i am|i'm)\s+([a-zA-Z]+)/i);
+    if (nameMatch && nameMatch[1]) {
+      const extractedName = nameMatch[1].charAt(0).toUpperCase() + nameMatch[1].slice(1).toLowerCase();
+      localStorage.setItem('userName', extractedName);
+      window.dispatchEvent(new CustomEvent('userNameUpdated', { detail: extractedName }));
+      
+      setMessages(prev => [...prev, { role: 'ai', content: `Nice to meet you, ${extractedName}! I've updated the dashboard for you.` }]);
+      return;
+    }
+
     setIsLoading(true);
 
     try {

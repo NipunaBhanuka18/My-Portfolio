@@ -32,7 +32,7 @@ export default function ContactTile() {
       {/* Location */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', background: 'rgba(255,255,255,0.05)', padding: '10px 15px', borderRadius: '10px' }}>
         <MapPin size={18} color="var(--color-neon-accent)" />
-        <span style={{ fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>Colombo, Sri Lanka (GMT +5:30)</span>
+        <span style={{ fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>Colombo, Sri Lanka (GMT+5:30)</span>
       </div>
 
       {/* Clock */}
