@@ -19,7 +19,7 @@ export default function BioTile() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         zIndex: 0,
-        opacity: 0.6,
+        opacity: 0.85,
         filter: 'grayscale(100%) contrast(1.1)'
       }} />
       
@@ -30,7 +30,7 @@ export default function BioTile() {
         left: 0,
         right: 0,
         bottom: 0,
-        background: 'linear-gradient(to bottom, rgba(10, 10, 15, 0.1) 0%, rgba(10, 10, 15, 0.95) 80%)',
+        background: 'linear-gradient(to bottom, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 0.3) 40%, rgba(10, 10, 15, 0.95) 100%)',
         zIndex: 1,
       }} />
 
