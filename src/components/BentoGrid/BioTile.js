@@ -6,10 +6,39 @@ import { Dumbbell, Leaf } from 'lucide-react';
 
 export default function BioTile() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', gap: '15px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', position: 'relative', overflow: 'hidden' }}>
       
-      {/* Top Section: Avatar and Bio Text */}
-      <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
+      {/* Background Image Layer */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundImage: 'url("/lifestyle.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        zIndex: 0,
+        opacity: 0.6,
+        filter: 'grayscale(100%) contrast(1.1)'
+      }} />
+      
+      {/* Dark Gradient Overlay for Readability */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'linear-gradient(to bottom, rgba(10, 10, 15, 0.1) 0%, rgba(10, 10, 15, 0.95) 80%)',
+        zIndex: 1,
+      }} />
+
+      {/* Content Layer */}
+      <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', height: '100%', gap: '15px' }}>
+        
+        {/* Top Section: Avatar and Bio Text */}
+        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
         <div style={{ 
           width: '80px', 
           height: '80px', 
@@ -55,6 +84,8 @@ export default function BioTile() {
             Finding logic and elegant solutions outdoors.
           </p>
         </div>
+
+      </div>
 
       </div>
 
