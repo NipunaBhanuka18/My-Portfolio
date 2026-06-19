@@ -7,8 +7,8 @@ import styles from './BentoGrid.module.css';
 import AutoPulseTile from './AutoPulseTile';
 import PrimeShineTile from './PrimeShineTile';
 import NslKddTile from './NslKddTile';
-import AutomationStackTile from './AutomationStackTile';
 import TechRadarTile from './TechRadarTile';
+import SlRegulaAiTile from './SlRegulaAiTile';
 import BioTile from './BioTile';
 import ContactTile from './ContactTile';
 
@@ -56,6 +56,16 @@ export default function BentoGrid() {
         </div>
       </motion.div>
 
+      <motion.div variants={itemVariants} className={`${styles.tile} ${styles.aiTile} glass-panel`}>
+        <div className={styles.tileHeader}>
+          <div className={styles.tileSubtitle}>Enterprise AI System</div>
+          <h2 className={styles.tileTitle}>SL-RegulaAI</h2>
+        </div>
+        <div className={styles.tileContent}>
+          <SlRegulaAiTile />
+        </div>
+      </motion.div>
+
       <motion.div variants={itemVariants} className={`${styles.tile} ${styles.productionTile} glass-panel`}>
         <div className={styles.tileHeader}>
           <div className={styles.tileSubtitle}>Production Project</div>
@@ -73,16 +83,6 @@ export default function BentoGrid() {
         </div>
         <div className={styles.tileContent}>
           <NslKddTile />
-        </div>
-      </motion.div>
-
-      <motion.div variants={itemVariants} className={`${styles.tile} ${styles.automationTile} glass-panel`}>
-        <div className={styles.tileHeader}>
-          <div className={styles.tileSubtitle}>Workflow</div>
-          <h2 className={styles.tileTitle}>Automation Stack</h2>
-        </div>
-        <div className={styles.tileContent}>
-          <AutomationStackTile />
         </div>
       </motion.div>
 

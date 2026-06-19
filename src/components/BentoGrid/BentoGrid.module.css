@@ -1,75 +1,55 @@
 .bentoContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 24px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  width: max-content;
+  padding: 40px 20px;
+  align-items: center;
 }
 
 .tile {
-  padding: 30px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 350px;
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(0, 10, 24, 0.4);
+  border: 1px solid var(--color-glass-border);
 }
 
 .tile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 40px rgba(0, 102, 204, 0.2);
-  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-.featuredTile {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.productionTile {
-  grid-column: span 2;
-}
-
-.researchTile {
-  grid-column: span 1;
-  grid-row: span 2;
-}
-
-.automationTile {
-  grid-column: span 1;
-}
-
-.radarTile {
-  grid-column: span 2;
-}
-
-.bioTile {
-  grid-column: span 2;
-}
-
-.contactTile {
-  grid-column: span 2;
+.featuredTile, .productionTile, .aiTile, .radarTile, .bioTile, .contactTile, .researchTile {
+  width: 100%;
 }
 
 .tileHeader {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   z-index: 2;
 }
 
 .tileTitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 8px;
   color: var(--color-text-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .tileSubtitle {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 .tileContent {
@@ -78,31 +58,15 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
+  width: 100%;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
-  .bentoContainer {
-    grid-template-columns: repeat(2, 1fr);
+  .featuredTile, .productionTile, .aiTile, .radarTile, .bioTile, .contactTile {
+    width: 80vw;
   }
-  
-  .featuredTile, .productionTile, .radarTile, .bioTile, .contactTile {
-    grid-column: span 2;
-  }
-  
-  .researchTile, .automationTile {
-    grid-column: span 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .bentoContainer {
-    grid-template-columns: 1fr;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .tile {
-    min-height: 300px;
+  .researchTile {
+    width: 80vw;
   }
 }

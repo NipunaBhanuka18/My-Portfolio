@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { MapPin, Mail, Clock, User, Phone } from 'lucide-react';
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 export default function ContactTile() {
   const [time, setTime] = useState('');
@@ -73,12 +74,28 @@ export default function ContactTile() {
           transition: 'background 0.2s',
           textDecoration: 'none'
         }}
-        onMouseOver={(e) => e.currentTarget.style.background = 'var(--color-cyber-blue)'}
+        onMouseOver={(e) => e.currentTarget.style.background = 'var(--color-glass-bg)'}
         onMouseOut={(e) => e.currentTarget.style.background = 'var(--color-deep-navy)'}
       >
         <Mail size={18} />
         <span style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--color-text-primary)' }}>bhanukakck2018@gmail.com</span>
       </a>
+
+      {/* Social Links */}
+      <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginTop: '10px' }}>
+        <a href="https://www.linkedin.com/in/bhanuka-samarasinghe-23ab732a9" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-secondary)', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#0077b5'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
+          <FaLinkedin size={24} />
+        </a>
+        <a href="https://github.com/NipunaBhanuka18" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-secondary)', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#333'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
+          <FaGithub size={24} />
+        </a>
+        <a href="https://www.facebook.com/share/1BVP7Ws62d/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-secondary)', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#1877f2'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
+          <FaFacebook size={24} />
+        </a>
+        <a href="https://www.instagram.com/_nipuna___" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-secondary)', transition: 'color 0.2s' }} onMouseOver={(e) => e.currentTarget.style.color = '#e4405f'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--color-text-secondary)'}>
+          <FaInstagram size={24} />
+        </a>
+      </div>
 
     </div>
   );

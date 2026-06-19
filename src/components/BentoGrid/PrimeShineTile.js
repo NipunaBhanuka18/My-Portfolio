@@ -16,6 +16,11 @@ export default function PrimeShineTile() {
 
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* Project Title */}
+      <div style={{ width: '100%', textAlign: 'left' }}>
+        <h2 style={{ fontSize: '1.8rem', color: 'var(--color-text-primary)', margin: '0 0 5px 0' }}>PrimeShine Cloud</h2>
+        <div style={{ fontSize: '0.8rem', color: 'var(--color-neon-accent)', textTransform: 'uppercase', letterSpacing: '2px' }}>Cloud Health & Monitoring</div>
+      </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Activity color="var(--color-neon-accent)" />

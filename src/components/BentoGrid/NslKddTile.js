@@ -10,7 +10,14 @@ export default function NslKddTile() {
   ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '15px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', gap: '15px', height: '100%', justifyContent: 'flex-start' }}>
+      
+      {/* Project Title */}
+      <div style={{ width: '100%', textAlign: 'left' }}>
+        <h2 style={{ fontSize: '1.8rem', color: 'var(--color-text-primary)', margin: '0 0 5px 0' }}>NSL-KDD Defense</h2>
+        <div style={{ fontSize: '0.8rem', color: 'var(--color-neon-accent)', textTransform: 'uppercase', letterSpacing: '2px' }}>Machine Learning / Random Forest</div>
+      </div>
+
       <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', textAlign: 'center' }}>
         RandomForest Classification on 125k+ Logs
       </p>

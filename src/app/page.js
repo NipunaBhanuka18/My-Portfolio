@@ -1,14 +1,25 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Hero3D from '@/components/Hero3D';
-import BentoGrid from '@/components/BentoGrid/BentoGrid';
-import AgentChat from '@/components/AgentChat';
+import NavigationDock from '@/components/NavigationDock';
+import WindowOverlay from '@/components/WindowOverlay';
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState(null);
+
   return (
-    <main style={{ minHeight: '100vh', position: 'relative' }}>
+    <main style={{ height: '100vh', width: '100vw', position: 'relative', overflow: 'hidden' }}>
       <Hero3D />
-      <BentoGrid />
-      <AgentChat />
+      
+      <AnimatePresence mode="wait">
+        {activeTab && (
+          <WindowOverlay activeTab={activeTab} onClose={() => setActiveTab(null)} />
+        )}
+      </AnimatePresence>
+
+      <NavigationDock activeTab={activeTab} setActiveTab={setActiveTab} />
     </main>
   );
 }
